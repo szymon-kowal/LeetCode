@@ -42,14 +42,7 @@ var copyRandomList = function(head) {
                 newCurrent = newCurrent.next;
             }
             newList2.random = newCurrent;
-            console.log(count)
         }
-        
-        
-        
-        
-        
-        // newList2.random = smth in newList2;
         newList2 = newList2.next;
         current2 = current2.next;
     }
