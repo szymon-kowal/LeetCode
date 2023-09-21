@@ -5,8 +5,6 @@
 var findDiagonalOrder = function(mat) {
     let m = mat.length;
     let n = mat[0].length;
-    console.log(m)
-    console.log(n)
     if (m == 1) return mat[0];
     let storage = {}
     for (let i = 0; i < m; i++) {
