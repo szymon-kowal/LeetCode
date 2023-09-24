@@ -19,6 +19,4 @@ var minSubArrayLen = function(target, nums) {
         }
     }
     return min_length === Infinity ? 0 : min_length;
-    
-
 };
