@@ -4,7 +4,7 @@
  * @return {Array}
  */
 var sortBy = function(arr, fn) {
-    return arr.slice().sort(function(a, b) {
+    return arr.sort(function(a, b) {
     return fn(a) - fn(b);
   });
 }
