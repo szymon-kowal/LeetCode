@@ -11,9 +11,9 @@ var TimeLimitedCache = function() {
  */
 TimeLimitedCache.prototype.set = function(key, value, duration) {
     let found = this.cache.has(key);
-    if (found) clearTimeout(this.cache.get(key).ref);  // Cancel previous timeout
+    if (found) clearTimeout(this.cache.get(key).ref); 
     this.cache.set(key, {
-        value,  // Equivalent to `value: value`
+        value, 
         ref: setTimeout(() => this.cache.delete(key), duration)
     });
     return found;
