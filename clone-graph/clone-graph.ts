@@ -16,13 +16,13 @@ function cloneGraph(node: Node | null): Node | null {
 	if (!node) return null;
     
     if (nodeMap.has(node)) {
-        return nodeMap.get(node)!;
+        return nodeMap.get(node);
     }
     
-    const newNode = new Node(node.val);
+    const newNode = new Node(node.val)
     
-    nodeMap.set(node, newNode)
-    newNode.neighbors = node.neighbors.map((nei) => cloneGraph(nei)!)
+    nodeMap.set(node, newNode);
     
+    newNode.neighbors = node.neighbors.map((nei) => cloneGraph(nei));
     return newNode;
 };
