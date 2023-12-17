@@ -22,29 +22,29 @@ class MyQueue {
 
 
 class MyStack {
-    public Q;
+    public Queue;
     constructor() {
-        this.Q = new MyQueue()
+        this.Queue = new MyQueue()
     }
 
     push(x: number): void {
-        let l = this.Q.queue.length;
-        this.Q.push(x)
+        let l = this.Queue.queue.length;
+        this.Queue.push(x)
         for(let i = 1; i <= l; i++) {
-            let r = this.Q.pop();
-            this.Q.push(r)
+            let r = this.Queue.pop();
+            this.Queue.push(r)
         }
     }
 
     pop(): number {
-        return this.Q.pop()
+        return this.Queue.pop()
     }
 
     top(): number {
-        return this.Q.peek()
+        return this.Queue.peek()
     }
 
     empty(): boolean {
-        return this.Q.queue.length == 0
+        return this.Queue.queue.length == 0
     }
 }
