@@ -19,13 +19,13 @@ function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
     if (!inorder.length) return null;
     if (!postorder.length) return null;
     
-    const root:TreeNode = new TreeNode(postorder[postorder.length - 1]);
+    const root:TreeNode = new TreeNode(postorder.pop());
     
     const index: number = inorder.indexOf(root.val);
     
-    root.right = buildTree(inorder.slice(index + 1), postorder.slice(index, -1));
+    root.right = buildTree(inorder.slice(index + 1), postorder.slice(index));
 
-    root.left = buildTree(inorder.slice(0, index ), postorder.slice(0, index));
+    root.left = buildTree(inorder.slice(0, index ), postorder.slice(0, index ));
     
     
     return root;
