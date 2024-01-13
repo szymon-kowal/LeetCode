@@ -6,7 +6,6 @@ function minSteps(s: string, t: string): number {
         tMap.set(t[i],tMap.get(t[i]) ? tMap.get(t[i]) + 1 : 1)
     }
     let count:number = 0;
-    console.log(sMap)
     for (const [char, freq] of tMap) {
         const sFreq = sMap.get(char) || 0;
             if (freq > sFreq) {
