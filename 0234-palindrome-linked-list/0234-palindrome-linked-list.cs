@@ -27,9 +27,7 @@ public class Solution {
         if (fast.next != null) {
             slow = slow.next;
         }
-        foreach(var val in stackOfVals) {
-            Console.WriteLine(val);
-        }
+
         while (slow != null) {
             int top = stackOfVals.Pop();
             if (top != slow.val) return false;
