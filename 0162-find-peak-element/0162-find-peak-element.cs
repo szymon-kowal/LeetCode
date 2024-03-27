@@ -12,6 +12,6 @@ public class Solution {
                 right = mid;
             }
         }
-        return nums[left] > nums[right] ? left : right;
+        return right;
     }
 }
