@@ -1,20 +1,23 @@
 public class Solution {
     public IList<string> GenerateParenthesis(int n) {
-        IList<string> answer = new List<string>();
-        helper(answer, "(", 1 , 0, n);
+        List<string> answer = new();
+        Helper(answer, new StringBuilder(), 0, 0, n);
         return answer;
     }
-    
-    private void helper(IList<string> list, string curr, int open, int close, int n) {
-        if(curr.Length == 2 * n) {
-            list.Add(curr);
-            return;
+    public void Helper(IList<string> answer, StringBuilder current, int openP, int closeP, int n) {
+        if (current.Length == n * 2) {
+            answer.Add(current.ToString());
         }
-        if(open < n) {
-           helper(list, curr + "(", open + 1, close,n);
+        if (openP < n) {
+            current.Append("(");
+            Helper(answer, current, openP + 1, closeP, n);
+            current.Remove(current.Length - 1, 1);
         }
-        if(close < open) {
-            helper(list, curr + ")", open, close + 1,n);
+        if (closeP < openP) {
+            current.Append(")");
+            Helper(answer, current, openP , closeP + 1, n);
+            current.Remove(current.Length - 1, 1);
         }
+        return;
     }
 }
