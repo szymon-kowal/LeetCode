@@ -5,8 +5,9 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
+    let answerInit = init;
     for (let i = 0; i < nums.length; i++) {
-         init = fn(init, nums[i]);
+        answerInit = fn(answerInit, nums[i]);
     }
-    return init;
+    return answerInit;
 };
