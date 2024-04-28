@@ -4,10 +4,12 @@
  */
 var once = function(fn) {
     let flag = 0;
-    return function(...args){
+    return function(...val) {
         if (flag == 0) {
             flag++;
-            return fn(...args);
+            return fn(...val)
+        } else {
+            return undefined;
         }
     }
 };
