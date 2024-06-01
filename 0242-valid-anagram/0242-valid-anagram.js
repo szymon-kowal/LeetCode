@@ -4,18 +4,28 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    if (s.length != t.length) {
-        return false;
+    const hashMap = {};
+
+    for (let i = 0; i < s.length; i++) {
+        const char = s[i];
+        if (hashMap[char]) {
+            hashMap[char]++;
+        } else {
+            hashMap[char] = 1;
+        }
     }
-    const charS = s.split('');
-    charS.sort();
-    const charT = t.split('');
-    charT.sort();
-    
-    for (let i = 0;i < charS.length; i++) {
-        if (charS[i] !== charT[i]) {
+
+    for (let i = 0; i < t.length; i++) {
+        const char = t[i];
+        if (hashMap[char]) {
+            hashMap[char]--;
+            if (hashMap[char] === 0) {
+                delete hashMap[char];
+            }
+        } else {
             return false;
         }
     }
-    return true;
+
+    return Object.keys(hashMap).length === 0;
 };
