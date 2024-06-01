@@ -6,12 +6,12 @@
 var twoSum = function(nums, target) {
     const hashMap = {};
     for (let i = 0; i < nums.length; i++) {
-        if (hashMap.hasOwnProperty(target - nums[i])) {
-            return [hashMap[target - nums[i]],i];
-        }
-        else {
-        hashMap[nums[i]]=i;
+        const calc = target - nums[i];
+        if (calc in hashMap) {
+            return [hashMap[calc], i];
+        } else {
+            hashMap[nums[i]] = i;
         }
     }
-return false;
+    return [0, 0];
 };
